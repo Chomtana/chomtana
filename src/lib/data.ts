@@ -8,12 +8,14 @@ export type Profile = {
   x: string;
 };
 
-export type PullRequest = {
+export type Contribution = {
+  kind: 'pr' | 'issue';
   title: string;
   repo: string;
   url: string;
   number: number;
-  mergedAt: string;
+  date: string;
+  state?: 'merged' | 'closed' | 'open';
 };
 
 export type Entry = {
@@ -34,41 +36,69 @@ export const profile: Profile = {
   x: 'https://x.com/chomtana001',
 };
 
-export const pullRequests: PullRequest[] = [
+export const contributions: Contribution[] = [
   {
+    kind: 'pr',
+    state: 'merged',
     title: 'fix: correct gas estimation edge case in eth_estimateGas',
     repo: 'ethereum/go-ethereum',
     number: 29871,
     url: 'https://github.com/ethereum/go-ethereum/pull/29871',
-    mergedAt: '2025-11-12',
+    date: '2025-11-12',
   },
   {
+    kind: 'pr',
+    state: 'merged',
     title: 'feat: add EIP-7702 authorization cache to transaction pool',
     repo: 'paradigmxyz/reth',
     number: 10432,
     url: 'https://github.com/paradigmxyz/reth/pull/10432',
-    mergedAt: '2025-09-04',
+    date: '2025-09-04',
   },
   {
+    kind: 'issue',
+    state: 'closed',
+    title: 'Nonce handling regression when resubmitting 7702-authorized txs',
+    repo: 'paradigmxyz/reth',
+    number: 10398,
+    url: 'https://github.com/paradigmxyz/reth/issues/10398',
+    date: '2025-08-21',
+  },
+  {
+    kind: 'pr',
+    state: 'merged',
     title: 'docs: clarify reentrancy guard semantics across delegatecall',
     repo: 'OpenZeppelin/openzeppelin-contracts',
     number: 5221,
     url: 'https://github.com/OpenZeppelin/openzeppelin-contracts/pull/5221',
-    mergedAt: '2025-07-23',
+    date: '2025-07-23',
   },
   {
+    kind: 'issue',
+    state: 'closed',
+    title: 'ERC4626 preview functions round inconsistently with deposit/mint',
+    repo: 'OpenZeppelin/openzeppelin-contracts',
+    number: 5188,
+    url: 'https://github.com/OpenZeppelin/openzeppelin-contracts/issues/5188',
+    date: '2025-06-09',
+  },
+  {
+    kind: 'pr',
+    state: 'merged',
     title: 'perf: reduce redundant storage reads in ERC4626 vault accounting',
     repo: 'foundry-rs/foundry',
     number: 8877,
     url: 'https://github.com/foundry-rs/foundry/pull/8877',
-    mergedAt: '2025-05-30',
+    date: '2025-05-30',
   },
   {
+    kind: 'pr',
+    state: 'merged',
     title: 'fix: handle malformed revert data in viem decodeErrorResult',
     repo: 'wevm/viem',
     number: 3102,
     url: 'https://github.com/wevm/viem/pull/3102',
-    mergedAt: '2025-03-18',
+    date: '2025-03-18',
   },
 ];
 

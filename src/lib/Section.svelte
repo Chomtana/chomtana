@@ -2,47 +2,80 @@
   import type { Snippet } from 'svelte';
   let {
     id,
+    index,
     title,
     subtitle,
     children,
-  }: { id: string; title: string; subtitle?: string; children: Snippet } = $props();
+  }: {
+    id: string;
+    index: string;
+    title: string;
+    subtitle?: string;
+    children: Snippet;
+  } = $props();
 </script>
 
 <section {id} class="section">
-  <header>
-    <h2>{title}</h2>
-    {#if subtitle}<p class="subtitle">{subtitle}</p>{/if}
-  </header>
-  {@render children()}
+  <div class="inner">
+    <header>
+      <div class="eyebrow">
+        <span class="index">{index}</span>
+        <span class="line-mark"></span>
+        <span class="label">— {subtitle ?? ''}</span>
+      </div>
+      <h2>{title}</h2>
+    </header>
+    <div class="content">
+      {@render children()}
+    </div>
+  </div>
 </section>
 
 <style>
   .section {
-    padding: 56px 24px;
+    padding: 88px 24px;
     border-top: 1px solid var(--border);
   }
+  .inner {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
   header {
-    max-width: 960px;
-    margin: 0 auto 28px;
+    margin-bottom: 44px;
+  }
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+  .index {
+    color: var(--accent);
+  }
+  .line-mark {
+    flex-shrink: 0;
+    width: 28px;
+    height: 1px;
+    background: var(--border-strong);
   }
   h2 {
-    font-size: 28px;
+    font-family: var(--display);
     font-weight: 600;
-    letter-spacing: -0.02em;
-    margin: 0 0 6px;
+    font-size: clamp(32px, 4.8vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
     color: var(--text-h);
-  }
-  .subtitle {
-    color: var(--text);
     margin: 0;
-    font-size: 15px;
+    max-width: 900px;
   }
   @media (max-width: 640px) {
     .section {
-      padding: 40px 20px;
-    }
-    h2 {
-      font-size: 22px;
+      padding: 64px 20px;
     }
   }
 </style>
