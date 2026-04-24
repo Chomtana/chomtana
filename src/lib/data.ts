@@ -1,5 +1,6 @@
 export type Profile = {
   name: string;
+  headline: string;
   email: string;
   avatar: string;
   tagline: string;
@@ -28,12 +29,13 @@ export type Entry = {
 
 export const profile: Profile = {
   name: 'Chomtana',
-  email: 'common@deltamax.tech',
+  headline: 'Building TopDev.to',
+  email: 'Chomtana001@gmail.com',
   avatar: 'https://avatars.githubusercontent.com/u/4103490?v=4',
-  tagline: 'Smart contract engineer, open-source contributor, and hackathon hacker.',
+  tagline: 'Find hidden founders, grads and elites on Github.',
   github: 'https://github.com/Chomtana',
-  linkedin: 'https://www.linkedin.com/in/chomtana-chanjaraswichai/',
-  x: 'https://x.com/chomtana001',
+  linkedin: 'https://www.linkedin.com/in/chomtana',
+  x: 'https://x.com/Chomtana',
 };
 
 export const contributions: Contribution[] = [
