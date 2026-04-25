@@ -3,6 +3,14 @@
   import type { Entry } from './data';
 
   let { items }: { items: Entry[] } = $props();
+
+  const fmt = (iso: string) => {
+    const [y, m] = iso.split('-');
+    return new Date(Number(y), Number(m ?? 1) - 1, 1).toLocaleDateString(undefined, {
+      year: 'numeric',
+      month: 'short',
+    });
+  };
 </script>
 
 <ul class="entry-list">
@@ -10,7 +18,7 @@
     <li>
       <a href={entry.link} target="_blank" rel="noreferrer">
         <div class="meta">
-          {#if entry.date}<span class="date">{entry.date}</span>{/if}
+          {#if entry.date}<span class="date">{fmt(entry.date)}</span>{/if}
           {#if entry.tag}<span class="tag" class:winner={entry.winner}>{entry.tag}</span>{/if}
         </div>
         <div class="body">

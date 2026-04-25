@@ -213,20 +213,22 @@ export const hackathons: Entry[] = [
 
 export const audits: Entry[] = [
   {
-    title: "Renzo Restaked ETH — High severity finding",
+    title: "Axelar Network v2 contest",
     description:
-      "Identified an oracle freshness issue allowing stale ezETH price to be used for minting during chain reorgs.",
-    link: "https://code4rena.com/audits",
-    tag: "High",
-    date: "2025-10",
+      "XC20Wrapper may lost received token forever if LocalAsset(xc20).mint is reverted indefinitely.",
+    link: "https://code4rena.com/audits/2022-07-axelar-network-v2-contest",
+    tag: "1st Place",
+    date: "2022-07",
+    winner: true,
   },
   {
-    title: "Ondo USDY Bridge — Medium severity finding",
+    title: "Axelar Network contest",
     description:
-      "Reported a rounding asymmetry between mint and redeem paths causing tiny but compounding dust loss for users.",
-    link: "https://code4rena.com/audits",
-    tag: "Medium",
-    date: "2025-07",
+      "Cross-chain smart contract calls can revert but source chain tokens remain burnt and are not refunded.",
+    link: "https://code4rena.com/audits/2022-04-axelar-network-contest",
+    tag: "2nd Place",
+    date: "2022-04",
+    winner: true,
   },
   {
     title: "Maia DAO Ulysses — 2x Medium findings",
