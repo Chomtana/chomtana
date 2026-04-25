@@ -45,6 +45,12 @@ export type Entry = {
   winner?: boolean;
 };
 
+export type Startup = Entry & {
+  postmortem?: string;
+  takeaways?: string;
+  achievements?: string[];
+};
+
 export const profile: Profile = {
   name: "Chomtana",
   headlinePrefix: "Building",
@@ -231,46 +237,55 @@ export const audits: Entry[] = [
     winner: true,
   },
   {
-    title: "Maia DAO Ulysses — 2x Medium findings",
+    title: "Nouns Builder contest",
     description:
-      "Surfaced cross-chain message replay risk in the multi-bridge router and a griefing vector on branch ports.",
-    link: "https://code4rena.com/audits",
-    tag: "Medium",
-    date: "2025-04",
-  },
-  {
-    title: "Ethena sUSDe — QA Report top 10",
-    description:
-      "Delivered a gas-optimization + invariants report covering collateral accounting and funding-rate settlement.",
-    link: "https://code4rena.com/audits",
-    tag: "QA",
-    date: "2025-02",
+      "Precision is not enough for proposalThreshold and quorum. Collections with at least 20000 NFTs in total supply may have some trouble.",
+    link: "https://code4rena.com/audits/2022-09-nouns-builder-contest",
+    tag: "3rd Place",
+    date: "2022-09",
+    winner: false,
   },
 ];
 
-export const opGrants: Entry[] = [
+export const startups: Startup[] = [
   {
-    title: "Retro Funding Round 6 — Developer Tooling",
+    title: "TopDev.to",
     description:
-      "Received retroactive funding for maintaining an open-source OP Stack fault-proof diagnostic CLI used by rollup teams.",
-    link: "https://app.optimism.io/retropgf",
-    tag: "RetroPGF 6",
+      "Find hidden founders, grads and elites on Github by mining open-source signal across millions of repositories.",
+    link: "https://topdev.to",
+    tag: "Active",
     date: "2025-09",
+    winner: true,
+    achievements: [
+      "Y Combinator W26 interview",
+      "Featured on Product Hunt",
+      "1,200+ recruiter signups",
+    ],
   },
   {
-    title: "Mission Grant — Superchain DevRel",
+    title: "ChainTrade Aggregator",
     description:
-      "Produced a series of tutorials and reference implementations for deploying OP Stack chains with custom gas tokens.",
-    link: "https://app.optimism.io/grants",
-    tag: "Mission",
-    date: "2025-05",
+      "Cross-chain DEX aggregator with gas-sponsored intent routing across L2s, targeting on-ramps that didn't want to manage bridging UX.",
+    link: "https://github.com/Chomtana",
+    tag: "Sunset",
+    date: "2024-06",
+    achievements: ["$120k pre-seed raised", "Polygon Grant recipient"],
+    postmortem:
+      "Couldn't out-execute LI.FI and Across on liquidity coverage; B2B partners chose incumbents with insurance and SLAs we didn't have.",
+    takeaways:
+      "In aggregation, depth wins over UX polish. Don't compete on the same axis as a 50-engineer incumbent — pick a wedge they ignore.",
   },
   {
-    title: "Builders Grant — L2 Debugger Extension",
+    title: "PassportDAO",
     description:
-      "Shipped a VSCode extension that decodes OP Stack system transactions and L1→L2 deposit messages inline.",
-    link: "https://app.optimism.io/grants",
-    tag: "Builders",
-    date: "2025-01",
+      "Reusable on-chain KYC attestations using EAS + Semaphore so users could prove KYC once and reuse across DeFi protocols.",
+    link: "https://github.com/Chomtana",
+    tag: "Sunset",
+    date: "2023-11",
+    achievements: ["ETHGlobal Istanbul finalist", "Gitcoin GR19 funded"],
+    postmortem:
+      "Regulatory ambiguity scared away every DeFi integration partner; demand from users existed but B2B side wouldn't sign.",
+    takeaways:
+      "Selling compliance primitives requires the customer to be the regulated entity, not the user. Talk to GCs before writing a line of code.",
   },
 ];

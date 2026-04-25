@@ -1,8 +1,8 @@
 <script lang="ts">
   import Icon from './Icon.svelte';
-  import type { Entry } from './data';
+  import type { Startup } from './data';
 
-  let { items }: { items: Entry[] } = $props();
+  let { items }: { items: Startup[] } = $props();
 
   const fmt = (iso: string) => {
     const [y, m] = iso.split('-');
@@ -13,17 +13,40 @@
   };
 </script>
 
-<ul class="entry-list">
-  {#each items as entry (entry.link + entry.title)}
+<ul class="startup-list">
+  {#each items as s (s.link + s.title)}
     <li>
-      <a href={entry.link} target="_blank" rel="noreferrer">
+      <a href={s.link} target="_blank" rel="noreferrer">
         <div class="meta">
-          {#if entry.date}<span class="date">{fmt(entry.date)}</span>{/if}
-          {#if entry.tag}<span class="tag" class:winner={entry.winner}>{entry.tag}</span>{/if}
+          {#if s.date}<span class="date">{fmt(s.date)}</span>{/if}
+          {#if s.tag}<span class="tag" class:winner={s.winner}>{s.tag}</span>{/if}
         </div>
         <div class="body">
-          <h3>{entry.title}</h3>
-          <p>{entry.description}</p>
+          {#if s.achievements && s.achievements.length}
+            <ul class="achievements">
+              {#each s.achievements as a}
+                <li class="tag achievement">{a}</li>
+              {/each}
+            </ul>
+          {/if}
+          <h3>{s.title}</h3>
+          <p class="desc">{s.description}</p>
+          {#if s.postmortem || s.takeaways}
+            <dl class="notes">
+              {#if s.postmortem}
+                <div>
+                  <dt>Why failed?</dt>
+                  <dd>{s.postmortem}</dd>
+                </div>
+              {/if}
+              {#if s.takeaways}
+                <div>
+                  <dt>What did I learn?</dt>
+                  <dd>{s.takeaways}</dd>
+                </div>
+              {/if}
+            </dl>
+          {/if}
         </div>
         <span class="arrow"><Icon name="arrow" size={20} /></span>
       </a>
@@ -32,7 +55,7 @@
 </ul>
 
 <style>
-  .entry-list {
+  .startup-list {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -96,11 +119,32 @@
     border-color: rgba(212, 255, 58, 0.45);
     background: var(--accent-dim);
   }
+  .tag.achievement {
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    border-color: rgba(212, 255, 58, 0.3);
+    background: rgba(212, 255, 58, 0.06);
+  }
   .body {
     min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .achievements {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    order: 2;
   }
   h3 {
-    margin: 0 0 10px;
+    order: 1;
+    margin: 0 0 12px;
     font-family: var(--display);
     font-weight: 500;
     font-size: clamp(18px, 2vw, 24px);
@@ -112,11 +156,42 @@
   a:hover h3 {
     color: var(--accent);
   }
-  p {
-    margin: 0;
+  .desc {
+    order: 3;
+  }
+  .notes {
+    order: 4;
+  }
+  .desc {
+    margin: 0 0 18px;
     font-size: 15px;
     color: var(--text-mid);
-    max-width: 620px;
+    max-width: 720px;
+  }
+  .notes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 32px;
+    margin: 0;
+    max-width: 820px;
+  }
+  .notes > div {
+    border-left: 1px solid var(--border);
+    padding-left: 14px;
+  }
+  dt {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  dd {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-mid);
   }
   .arrow {
     display: inline-flex;
@@ -155,6 +230,9 @@
       justify-content: flex-end;
       padding-top: 0;
       align-items: center;
+    }
+    .notes {
+      grid-template-columns: 1fr;
     }
   }
 </style>

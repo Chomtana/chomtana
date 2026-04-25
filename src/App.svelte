@@ -4,9 +4,10 @@
   import Section from './lib/Section.svelte';
   import PRList from './lib/PRList.svelte';
   import EntryList from './lib/EntryList.svelte';
+  import StartupList from './lib/StartupList.svelte';
   import ContactModal from './lib/ContactModal.svelte';
   import Icon from './lib/Icon.svelte';
-  import { contributions, hackathons, audits, opGrants, profile } from './lib/data';
+  import { contributions, hackathons, audits, startups, profile } from './lib/data';
 
   let contactOpen = $state(false);
 
@@ -23,9 +24,18 @@
   <Hero />
 
   <Section
-    id="contributions"
+    id="startups"
     index="01"
-    title="Open source contributions"
+    title="Startup Journey"
+    subtitle="Fail fast, learn fast"
+  >
+    <StartupList items={startups} />
+  </Section>
+
+  <Section
+    id="contributions"
+    index="02"
+    title="Open Source Contributions"
     subtitle="Pull requests & issues"
   >
     <PRList items={contributions} />
@@ -33,7 +43,7 @@
 
   <Section
     id="hackathons"
-    index="02"
+    index="03"
     title="Hackathons"
     subtitle="Shipped under deadline"
   >
@@ -42,20 +52,11 @@
 
   <Section
     id="audits"
-    index="03"
-    title="Code4rena audits"
+    index="04"
+    title="Code4rena Audits"
     subtitle="Public contest findings"
   >
     <EntryList items={audits} />
-  </Section>
-
-  <Section
-    id="op-grants"
-    index="04"
-    title="OP grants"
-    subtitle="Superchain-funded work"
-  >
-    <EntryList items={opGrants} />
   </Section>
 
   <footer>

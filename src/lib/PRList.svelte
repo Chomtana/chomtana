@@ -85,6 +85,10 @@
     color: var(--text-h);
     letter-spacing: -0.015em;
     margin-bottom: 8px;
+    transition: color 0.2s;
+  }
+  a:hover .title {
+    color: var(--accent);
   }
   .meta {
     display: flex;
