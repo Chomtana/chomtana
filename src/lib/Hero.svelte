@@ -12,7 +12,10 @@
       <span class="name-text">{profile.name}</span>
       <span class="mark"></span>
     </p>
-    <h1>{profile.headline}</h1>
+    <h1>
+      {profile.headlinePrefix}
+      <a class="product" href={profile.product.url} target="_blank" rel="noreferrer">{profile.product.name}</a>
+    </h1>
 
     <p class="tagline">{profile.tagline}</p>
 
@@ -113,6 +116,18 @@
     color: var(--text-h);
     margin: 0 0 20px;
   }
+  .product {
+    color: var(--accent);
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    background-position: 0 100%;
+    transition: background-size 0.25s;
+  }
+  .product:hover {
+    background-size: 100% 2px;
+  }
 
   .tagline {
     max-width: 620px;
@@ -165,13 +180,12 @@
     transition:
       color 0.2s,
       border-color 0.2s,
-      transform 0.2s;
+      background 0.2s;
   }
   .icon-btn:hover {
-    color: var(--accent-ink);
-    background: var(--accent);
+    color: var(--text-h);
     border-color: var(--accent);
-    transform: translateY(-2px);
+    background: var(--accent-dim);
   }
 
   .scroll {

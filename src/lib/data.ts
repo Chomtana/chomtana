@@ -1,6 +1,7 @@
 export type Profile = {
   name: string;
-  headline: string;
+  headlinePrefix: string;
+  product: { name: string; url: string };
   email: string;
   avatar: string;
   tagline: string;
@@ -30,7 +31,8 @@ export type Entry = {
 
 export const profile: Profile = {
   name: "Chomtana",
-  headline: "Building TopDev.to",
+  headlinePrefix: "Building",
+  product: { name: "TopDev.to", url: "https://topdev.to" },
   email: "Chomtana001@gmail.com",
   avatar: "/myself-small.jpeg",
   tagline: "Find hidden founders, grads and elites on Github.",
@@ -41,7 +43,7 @@ export const profile: Profile = {
 
 export const seo = {
   title: `${profile.name} - Resume & Portfolio`,
-  description: `${profile.headline} - ${profile.tagline}`,
+  description: `${profile.headlinePrefix} ${profile.product.name} - ${profile.tagline}`,
   url: "https://chom.dev",
   favicon: "/myself-small-circle.png",
   image: profile.avatar,

@@ -13,7 +13,13 @@
     <li><a href="#audits">Audits</a></li>
     <li><a href="#op-grants">Grants</a></li>
   </ul>
-  <a class="cta" href="mailto:{profile.email}">Get in touch</a>
+  <button
+    class="cta"
+    type="button"
+    onclick={() => window.dispatchEvent(new CustomEvent('open-contact'))}
+  >
+    Get in touch
+  </button>
 </nav>
 
 <style>
@@ -82,9 +88,12 @@
     padding: 8px 16px;
     font-size: 13px;
     font-weight: 500;
+    font-family: inherit;
+    border: none;
     border-radius: 999px;
     background: var(--accent);
     color: var(--accent-ink);
+    cursor: pointer;
     transition:
       transform 0.2s,
       filter 0.2s;
