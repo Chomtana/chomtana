@@ -24,7 +24,7 @@
   <Section
     id="hackathons"
     index="02"
-    title="Hackathons & demos"
+    title="Hackathons"
     subtitle="Shipped under deadline"
   >
     <EntryList items={hackathons} />

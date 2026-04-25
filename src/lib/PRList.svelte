@@ -112,7 +112,9 @@
     background: var(--accent-dim);
   }
   .kind.issue {
-    color: var(--text-mid);
+    color: #c8a8ff;
+    border-color: rgba(168, 120, 255, 0.45);
+    background: rgba(168, 120, 255, 0.12);
   }
   .repo {
     color: var(--text-mid);

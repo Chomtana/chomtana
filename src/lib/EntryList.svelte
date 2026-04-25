@@ -11,7 +11,7 @@
       <a href={entry.link} target="_blank" rel="noreferrer">
         <div class="meta">
           {#if entry.date}<span class="date">{entry.date}</span>{/if}
-          {#if entry.tag}<span class="tag">{entry.tag}</span>{/if}
+          {#if entry.tag}<span class="tag" class:winner={entry.winner}>{entry.tag}</span>{/if}
         </div>
         <div class="body">
           <h3>{entry.title}</h3>
@@ -83,6 +83,11 @@
     border-radius: 999px;
     color: var(--text-h);
   }
+  .tag.winner {
+    color: var(--accent);
+    border-color: rgba(212, 255, 58, 0.45);
+    background: var(--accent-dim);
+  }
   .body {
     min-width: 0;
   }
@@ -122,9 +127,11 @@
       padding: 24px 4px;
     }
     .meta {
-      grid-column: 1 / 3;
+      grid-column: 1;
+      grid-row: 1;
       flex-direction: row;
       align-items: center;
+      padding-top: 0;
     }
     .body {
       grid-column: 1 / 3;
@@ -134,7 +141,8 @@
       grid-column: 2;
       grid-row: 1;
       justify-content: flex-end;
-      padding-top: 2px;
+      padding-top: 0;
+      align-items: center;
     }
   }
 </style>
