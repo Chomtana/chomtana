@@ -57,6 +57,15 @@
     subtitle="Public contest findings"
   >
     <EntryList items={audits} />
+    <div class="more-wrap">
+      <a class="more" href="https://code4rena.com/@Chom" target="_blank" rel="noreferrer">
+        <span>See more on Code4rena</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14"/>
+          <path d="m13 6 6 6-6 6"/>
+        </svg>
+      </a>
+    </div>
   </Section>
 
   <footer>
@@ -91,6 +100,26 @@
 <style>
   main {
     position: relative;
+  }
+  .more-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+  }
+  .more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    color: var(--accent);
+    transition: color 0.2s;
+  }
+  .more svg {
+    color: var(--accent);
+    transition: transform 0.25s;
+  }
+  .more:hover svg {
+    transform: translateX(4px);
   }
   footer {
     border-top: 1px solid var(--border);

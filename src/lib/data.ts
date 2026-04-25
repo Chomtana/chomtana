@@ -182,38 +182,93 @@ export const contributions: Contribution[] =
   contributionsRaw.map(parseContribution);
 
 export const hackathons: Entry[] = [
+  // {
+  //   title: "Chainlink Fall Hackathon 2021",
+  //   description:
+  //     "Built SLP Manager, a smart contract-based DApp that automates real-time SLP claims for Axie Infinity scholars, eliminating manual distribution delays and management overhead.",
+  //   link: "https://devpost.com/software/naga-product-tbd",
+  //   tag: "On the Rise Winners",
+  //   date: "2021-11",
+  //   winner: true,
+  // },
   {
-    title: "ETHGlobal Bangkok — Winner, Best DeFi UX",
+    title: "LINE Hack 2025 - Examer",
     description:
-      "Built a gas-sponsored, intent-based DEX aggregator that routes across L2s using EIP-7683 cross-chain intents.",
-    link: "https://ethglobal.com/showcase/",
-    tag: "ETHGlobal",
-    date: "2025-11",
+      "AI-Powered TCAS Past Exam Practice App. Powered by LINE Mini-App.",
+    link: "https://web.facebook.com/share/p/18meUN1fcP/",
+    tag: "2nd Place",
+    date: "2025-12",
     winner: true,
   },
   {
-    title: "ETHOnline 2025 — Finalist",
+    title: "ETHGlobal Bangkok 2024 - Proto Message Kit",
     description:
-      "Account-abstraction wallet with session keys for mobile gaming, paymaster-powered onboarding, no seed phrase.",
-    link: "https://ethglobal.com/events/ethonline2025",
-    tag: "ETHGlobal",
-    date: "2025-08",
-  },
-  {
-    title: "Chainlink BlockMagic — Top 10",
-    description:
-      "On-chain weather derivatives using Chainlink Functions + Data Streams for real-time parametric payouts to farmers.",
-    link: "https://chain.link/hackathon",
-    tag: "Chainlink",
-    date: "2025-06",
-  },
-  {
-    title: "Devcon SEA Hackathon — Honorable Mention",
-    description:
-      "Privacy-preserving ZK attestation layer for KYC reuse across DeFi protocols, based on Semaphore + EAS.",
-    link: "https://devcon.org/",
-    tag: "Devcon",
+      "Mina Protokit + XMTP MessageKit: A framework for building smart agent on Mina.",
+    link: "https://ethglobal.com/showcase/proto-message-kit-74ms8",
+    tag: "4th Place - Mina Protokit",
     date: "2024-11",
+    winner: false,
+  },
+  {
+    title: "Based SEA - Coinbase Smart Passport",
+    description:
+      "Connect Trusted Identities to Coinbase Smart Wallet and pay the yearly fee with Smart Wallet or Credit Card via Stripe.",
+    link: "https://devfolio.co/projects/coinbase-smart-passport-a2db",
+    tag: "Winner",
+    date: "2024-10",
+    winner: true,
+  },
+  {
+    title: "ETHOnline 2024 - 2048 ZKNoid",
+    description:
+      "A ZK-powered 2048 game written in Protokit with the ZKNoid SDK for Mina.",
+    link: "https://ethglobal.com/showcase/2048-zknoid-f6sir",
+    tag: "2nd Place - Mina zkGaming",
+    date: "2024-08",
+    winner: true,
+  },
+  {
+    title: "Aptos Event & ENS Gateway",
+    description:
+      "Gateway for onboarding people to crypto and connecting ENS domains to Aptos.",
+    link: "https://app.akindo.io/communities/27DaQ3DEpUMXG011W/products/peAr4oG4DS0jx7pm",
+    tag: "2nd Place",
+    date: "2024-06",
+    winner: true,
+  },
+  {
+    title: "Move Hackathon by WebX - Sui Axelar USDC Bridge",
+    description: "An application for bridging USDC to SUI through Axelar.",
+    link: "https://app.akindo.io/communities/63Lx7jnO1uNngpzR/products/Drg7LozggTg6AGmp",
+    tag: "2nd Place",
+    date: "2023-07",
+    winner: true,
+  },
+  {
+    title: "ENS Small Grants - Ecosystem Round 9",
+    description: "Add custom UniversalResolver support to Wagmi.",
+    link: "https://ensgrants.xyz/rounds/29/proposals/708",
+    tag: "4th Place",
+    date: "2023-06",
+    winner: false,
+  },
+  {
+    title: "Chainlink Fall Hackathon 2021",
+    description:
+      "Built SLP Manager, a smart contract-based DApp that automates real-time SLP claims for Axie Infinity scholars, eliminating manual distribution delays and management overhead.",
+    link: "https://devpost.com/software/naga-product-tbd",
+    tag: "On the Rise Winner",
+    date: "2021-11",
+    winner: true,
+  },
+  {
+    title: "SCB10X Bangkok Blockathon",
+    description:
+      "Built Estate-Onblock, an NFT platform where users stake country-specific tokens to farm digital landmarks and showcase their collections in virtual galleries.",
+    link: "https://techsauce.co/pr-news/scb-10x-bangkok-blockathon-2021-killswitch",
+    tag: "2nd Runner Up",
+    date: "2021-03",
+    winner: true,
   },
 ];
 
