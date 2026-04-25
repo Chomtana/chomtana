@@ -10,15 +10,31 @@ export type Profile = {
   x: string;
 };
 
-export type Contribution = {
-  kind: "pr" | "issue";
+export type ContributionInput = {
   title: string;
-  repo: string;
   url: string;
-  number: number;
   date: string;
   state?: "merged" | "closed" | "open";
 };
+
+export type Contribution = ContributionInput & {
+  kind: "pr" | "issue";
+  repo: string;
+  number: number;
+};
+
+function parseContribution(input: ContributionInput): Contribution {
+  const m = input.url.match(
+    /github\.com\/([^/]+\/[^/]+)\/(pull|issues)\/(\d+)/,
+  );
+  if (!m) throw new Error(`Invalid GitHub contribution URL: ${input.url}`);
+  return {
+    ...input,
+    repo: m[1],
+    kind: m[2] === "pull" ? "pr" : "issue",
+    number: Number(m[3]),
+  };
+}
 
 export type Entry = {
   title: string;
@@ -53,71 +69,111 @@ export const seo = {
   locale: "en_US",
 } as const;
 
-export const contributions: Contribution[] = [
+const contributionsRaw: ContributionInput[] = [
   {
-    kind: "pr",
-    state: "merged",
-    title: "fix: correct gas estimation edge case in eth_estimateGas",
-    repo: "ethereum/go-ethereum",
-    number: 29871,
-    url: "https://github.com/ethereum/go-ethereum/pull/29871",
-    date: "2025-11-12",
-  },
-  {
-    kind: "pr",
-    state: "merged",
-    title: "feat: add EIP-7702 authorization cache to transaction pool",
-    repo: "paradigmxyz/reth",
-    number: 10432,
-    url: "https://github.com/paradigmxyz/reth/pull/10432",
-    date: "2025-09-04",
-  },
-  {
-    kind: "issue",
     state: "closed",
-    title: "Nonce handling regression when resubmitting 7702-authorized txs",
-    repo: "paradigmxyz/reth",
-    number: 10398,
-    url: "https://github.com/paradigmxyz/reth/issues/10398",
-    date: "2025-08-21",
+    title: "No known Etherscan API URL for chain 143",
+    url: "https://github.com/foundry-rs/foundry/issues/13028",
+    date: "2026-01-09",
   },
   {
-    kind: "pr",
-    state: "merged",
-    title: "docs: clarify reentrancy guard semantics across delegatecall",
-    repo: "OpenZeppelin/openzeppelin-contracts",
-    number: 5221,
-    url: "https://github.com/OpenZeppelin/openzeppelin-contracts/pull/5221",
-    date: "2025-07-23",
-  },
-  {
-    kind: "issue",
     state: "closed",
-    title: "ERC4626 preview functions round inconsistently with deposit/mint",
-    repo: "OpenZeppelin/openzeppelin-contracts",
-    number: 5188,
-    url: "https://github.com/OpenZeppelin/openzeppelin-contracts/issues/5188",
-    date: "2025-06-09",
+    title:
+      "Test fail with Invalid data returned on OP mainnet fork, hardhat-ignition and hardhat-viem",
+    url: "https://github.com/sc-forks/solidity-coverage/issues/891",
+    date: "2024-08-23",
   },
   {
-    kind: "pr",
     state: "merged",
-    title: "perf: reduce redundant storage reads in ERC4626 vault accounting",
-    repo: "foundry-rs/foundry",
-    number: 8877,
-    url: "https://github.com/foundry-rs/foundry/pull/8877",
-    date: "2025-05-30",
+    title:
+      "chore: upgrade ensUniversalResolver on mainnet, sepolia and holesky",
+    url: "https://github.com/wevm/viem/pull/1905",
+    date: "2024-03-05",
   },
   {
-    kind: "pr",
+    state: "closed",
+    title: "reth on base mainnet not working with op-node v1.5.0",
+    url: "https://github.com/paradigmxyz/reth/issues/6388",
+    date: "2024-02-04",
+  },
+  {
     state: "merged",
-    title: "fix: handle malformed revert data in viem decodeErrorResult",
-    repo: "wevm/viem",
-    number: 3102,
-    url: "https://github.com/wevm/viem/pull/3102",
-    date: "2025-03-18",
+    title: "feat: base sepolia support",
+    url: "https://github.com/paradigmxyz/reth/pull/5697",
+    date: "2023-12-05",
+  },
+  {
+    state: "merged",
+    title: "restart: unless-stopped",
+    url: "https://github.com/Layr-Labs/eigenda-operator-setup/pull/15",
+    date: "2023-11-17",
+  },
+  {
+    state: "closed",
+    title:
+      "Unexpected Server Error on offchain attestation publish in optimism-goerli-bedrock",
+    url: "https://github.com/ethereum-attestation-service/eas-contracts/issues/112",
+    date: "2023-11-12",
+  },
+  {
+    state: "merged",
+    title: "Add contract deployer addresses on Optimism",
+    url: "https://github.com/duneanalytics/spellbook/pull/4557",
+    date: "2023-10-07",
+  },
+  {
+    state: "closed",
+    title: "Unknown gnosis safe error in the recent deployment code",
+    url: "https://github.com/ethereum-optimism/optimism/issues/7484",
+    date: "2023-09-30",
+  },
+  {
+    state: "merged",
+    title: "fix: add protocol version to getting-started.json",
+    url: "https://github.com/ethereum-optimism/optimism/pull/7449",
+    date: "2023-09-28",
+  },
+  {
+    state: "closed",
+    title: "Rabby wallet support",
+    url: "https://github.com/voteagora/agora/issues/7",
+    date: "2023-09-28",
+  },
+  {
+    state: "closed",
+    title: 'Offchain attestation "Attestation failed resolver check"',
+    url: "https://github.com/ethereum-attestation-service/eas-contracts/issues/76",
+    date: "2023-08-21",
+  },
+  {
+    state: "merged",
+    title: 'Fix duplicated datadir in "Running an OP Mainnet or testnet node"',
+    url: "https://github.com/ethereum-optimism/community-hub/pull/856",
+    date: "2023-07-31",
+  },
+  {
+    state: "merged",
+    title: "Fix yubihsm udev rules GROUP",
+    url: "https://github.com/iqlusioninc/tmkms/pull/728",
+    date: "2023-05-10",
+  },
+  {
+    state: "closed",
+    title:
+      'yarn: #5829 causes "global dir" and "global: GTAGS not found." error',
+    url: "https://github.com/ansible-collections/community.general/issues/6132",
+    date: "2023-03-03",
+  },
+  {
+    state: "merged",
+    title: "Optimize gas for _getFraction in AmountDeriver",
+    url: "https://github.com/ProjectOpenSea/seaport/pull/384",
+    date: "2022-06-07",
   },
 ];
+
+export const contributions: Contribution[] =
+  contributionsRaw.map(parseContribution);
 
 export const hackathons: Entry[] = [
   {
