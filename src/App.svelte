@@ -26,7 +26,7 @@
   <Section
     id="startups"
     index="01"
-    title="Startup Journey"
+    title="Founding Journey"
     subtitle="Fail fast, learn fast"
   >
     <StartupList items={startups} />

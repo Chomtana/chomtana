@@ -305,42 +305,52 @@ export const audits: Entry[] = [
 export const startups: Startup[] = [
   {
     title: "TopDev.to",
-    description:
-      "Find hidden founders, grads and elites on Github by mining open-source signal across millions of repositories.",
+    description: "Find hidden founders, grads and elites on Github",
     link: "https://topdev.to",
     tag: "Active",
-    date: "2025-09",
+    date: "2026-03",
     winner: true,
+    achievements: [],
+  },
+  {
+    title: "Turbo ZK Gaming",
+    description: "Real time peer to peer ZK gaming framework",
+    link: "https://turbo.ing",
+    tag: "Sunset",
+    date: "2024-10",
     achievements: [
-      "Y Combinator W26 interview",
-      "Featured on Product Hunt",
-      "1,200+ recruiter signups",
+      "a16z CSX Spring 2025 Video Request",
+      "Alliance MVP2 Hackathon",
     ],
+    postmortem:
+      "Impressive deep tech, but zero market demand. Game devs advertise 'fully on-chain' but still run core gameplay on centralized servers.",
+    takeaways:
+      "Validate demand before building by using a 'painted door test' via warm DMs, cold emails, and ads.",
   },
   {
-    title: "ChainTrade Aggregator",
+    title: "Hokum L3 OP Stack Gaming Chain",
     description:
-      "Cross-chain DEX aggregator with gas-sponsored intent routing across L2s, targeting on-ramps that didn't want to manage bridging UX.",
-    link: "https://github.com/Chomtana",
+      "The first (never hitting the news) gaming-focused OP Stack L3 on Base used Celestia DA",
+    link: "https://x.com/TweetByGerald/status/1738594978073579970",
     tag: "Sunset",
-    date: "2024-06",
-    achievements: ["$120k pre-seed raised", "Polygon Grant recipient"],
+    date: "2023-12",
+    achievements: ["a16z SR003 1st Interview"],
     postmortem:
-      "Couldn't out-execute LI.FI and Across on liquidity coverage; B2B partners chose incumbents with insurance and SLAs we didn't have.",
+      "L2/L3 rollups and on-chain gaming hype faded fast. Market shifted to pure cash-burning and airdrops.",
     takeaways:
-      "In aggregation, depth wins over UX polish. Don't compete on the same axis as a 50-engineer incumbent — pick a wedge they ignore.",
+      "Avoid building on unsustainable hype. Even if we start early, the trend may fade before we finish building.",
   },
   {
-    title: "PassportDAO",
+    title: "AxelarSea",
     description:
-      "Reusable on-chain KYC attestations using EAS + Semaphore so users could prove KYC once and reuse across DeFi protocols.",
-    link: "https://github.com/Chomtana",
+      "The first cross-chain NFT Bridge & Marketplace on Axelar. Hit 100k+ users in weeks, but they were mostly airdrop hunters.",
+    link: "https://x.com/axelarsea",
     tag: "Sunset",
-    date: "2023-11",
-    achievements: ["ETHGlobal Istanbul finalist", "Gitcoin GR19 funded"],
+    date: "2022-04",
+    achievements: ["Partnered with Axelar", "Went Viral"],
     postmortem:
-      "Regulatory ambiguity scared away every DeFi integration partner; demand from users existed but B2B side wouldn't sign.",
+      "Built at the NFT peak, right before the Luna collapse and the NFT market crash (and never recovered).",
     takeaways:
-      "Selling compliance primitives requires the customer to be the regulated entity, not the user. Talk to GCs before writing a line of code.",
+      "Avoid the peak hype. Get in early and build fast, and don't mistake airdrop hunters for real users.",
   },
 ];
