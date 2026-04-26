@@ -1,47 +1,60 @@
-# Svelte + TS + Vite
+# Hi, I'm Chomtana
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+Building **[TopDev.to](https://topdev.to)**. Find hidden founders, grads and elites on GitHub.
 
-## Recommended IDE Setup
+Portfolio: **[chom.dev](https://chom.dev)**
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+---
 
-## Need an official Svelte framework?
+## Founding journey
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+- **[TopDev.to](https://topdev.to)** *(Active, since Mar 2026)*. Find hidden founders, grads and elites on GitHub.
+- **[Turbo ZK Gaming](https://turbo.ing)** *(Sunset, Oct 2024)*. Real-time peer-to-peer ZK gaming framework.
+  - *Achievements:* a16z CSX Spring 2025 video request, Alliance MVP2 Hackathon.
+  - *Lesson:* validate demand before building. Game devs advertise "fully on-chain" but still run core gameplay on centralized servers.
+- **Hokum L3 OP Stack Gaming Chain** *(Sunset, Dec 2023)*. The first (never hitting the news) gaming-focused OP Stack L3 on Base, using Celestia DA.
+  - *Achievements:* a16z SR003 1st interview.
+  - *Lesson:* avoid building on unsustainable hype. Even if you start early, the trend may fade before you ship.
+- **[AxelarSea](https://x.com/axelarsea)** *(Sunset, Apr 2022)*. First cross-chain NFT bridge and marketplace on Axelar. Hit 100k+ users in weeks.
+  - *Achievements:* partnered with Axelar, went viral.
+  - *Lesson:* don't build at peak hype, and don't mistake airdrop hunters for real users.
 
-## Technical considerations
+## Selected open-source contributions
 
-**Why use this over SvelteKit?**
+- [chore: upgrade ensUniversalResolver on mainnet, sepolia and holesky](https://github.com/wevm/viem/pull/1905) on **viem**
+- [feat: base sepolia support](https://github.com/paradigmxyz/reth/pull/5697) on **reth**
+- [fix: add protocol version to getting-started.json](https://github.com/ethereum-optimism/optimism/pull/7449) on **Optimism**
+- [Add contract deployer addresses on Optimism](https://github.com/duneanalytics/spellbook/pull/4557) on **Dune Spellbook**
+- [Optimize gas for `_getFraction` in AmountDeriver](https://github.com/ProjectOpenSea/seaport/pull/384) on **Seaport**
+- [Fix yubihsm udev rules GROUP](https://github.com/iqlusioninc/tmkms/pull/728) on **tmkms**
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+Full list of PRs and issues on [my portfolio](https://chom.dev#contributions).
 
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+## Code4rena audits
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+- **1st place** on [Axelar Network v2 contest](https://code4rena.com/audits/2022-07-axelar-network-v2-contest)
+- **2nd place** on [Axelar Network contest](https://code4rena.com/audits/2022-04-axelar-network-contest)
+- **3rd place** on [Nouns Builder contest](https://code4rena.com/audits/2022-09-nouns-builder-contest)
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+More on [Code4rena (@Chom)](https://code4rena.com/@Chom).
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+## Hackathons
 
-**Why include `.vscode/extensions.json`?**
+- **2nd Place** at [LINE Hack 2025: Examer](https://web.facebook.com/share/p/18meUN1fcP/). AI-powered TCAS past-exam practice app on LINE Mini-App.
+- **4th Place, Mina Protokit** at [ETHGlobal Bangkok 2024: Proto Message Kit](https://ethglobal.com/showcase/proto-message-kit-74ms8). Framework for building smart agents on Mina with Protokit and XMTP.
+- **Winner** at [Based SEA: Coinbase Smart Passport](https://devfolio.co/projects/coinbase-smart-passport-a2db). Connect trusted identities to Coinbase Smart Wallet, pay yearly fee via Stripe.
+- **2nd Place, Mina zkGaming** at [ETHOnline 2024: 2048 ZKNoid](https://ethglobal.com/showcase/2048-zknoid-f6sir). ZK-powered 2048 written in Protokit with the ZKNoid SDK.
+- **2nd Place** at [Aptos Event and ENS Gateway](https://app.akindo.io/communities/27DaQ3DEpUMXG011W/products/peAr4oG4DS0jx7pm). Onboarding gateway connecting ENS domains to Aptos.
+- **2nd Place** at [Move Hackathon by WebX: Sui Axelar USDC Bridge](https://app.akindo.io/communities/63Lx7jnO1uNngpzR/products/Drg7LozggTg6AGmp). Bridging USDC to Sui through Axelar.
+- **4th Place** at [ENS Small Grants: Ecosystem Round 9](https://ensgrants.xyz/rounds/29/proposals/708). Custom UniversalResolver support for Wagmi.
+- **On the Rise Winner** at [Chainlink Fall Hackathon 2021: SLP Manager](https://devpost.com/software/naga-product-tbd). Automated real-time SLP claims for Axie Infinity scholars.
+- **2nd Runner-up** at [SCB10X Bangkok Blockathon: Estate-Onblock](https://techsauce.co/pr-news/scb-10x-bangkok-blockathon-2021-killswitch). Country-staking NFT platform with virtual galleries.
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+---
 
-**Why enable `allowJs` in the TS template?**
+## Find me
 
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+- Portfolio: [chom.dev](https://chom.dev)
+- LinkedIn: [in/chomtana](https://www.linkedin.com/in/chomtana)
+- X: [@Chomtana](https://x.com/Chomtana)
+- Email: Chomtana001@gmail.com

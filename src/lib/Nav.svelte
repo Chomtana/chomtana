@@ -10,8 +10,8 @@
   <ul>
     <li><a href="#startups">Startups</a></li>
     <li><a href="#contributions">Contributions</a></li>
-    <li><a href="#hackathons">Hackathons</a></li>
     <li><a href="#audits">Audits</a></li>
+    <li><a href="#hackathons">Hackathons</a></li>
   </ul>
   <button
     class="cta"

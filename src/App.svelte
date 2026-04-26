@@ -42,17 +42,8 @@
   </Section>
 
   <Section
-    id="hackathons"
-    index="03"
-    title="Hackathons"
-    subtitle="Shipped under deadline"
-  >
-    <EntryList items={hackathons} />
-  </Section>
-
-  <Section
     id="audits"
-    index="04"
+    index="03"
     title="Code4rena Audits"
     subtitle="Public contest findings"
   >
@@ -66,6 +57,15 @@
         </svg>
       </a>
     </div>
+  </Section>
+
+  <Section
+    id="hackathons"
+    index="04"
+    title="Hackathons"
+    subtitle="Shipped under deadline"
+  >
+    <EntryList items={hackathons} />
   </Section>
 
   <footer>
