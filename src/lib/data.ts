@@ -212,7 +212,7 @@ export const hackathons: Entry[] = [
   {
     title: "Based SEA - Coinbase Smart Passport",
     description:
-      "Connect Trusted Identities to Coinbase Smart Wallet and pay the yearly fee with Smart Wallet or Credit Card via Stripe.",
+      "Connect Trusted Identities to Coinbase Smart Wallet and pay with Smart Wallet or Credit Card via Stripe.",
     link: "https://devfolio.co/projects/coinbase-smart-passport-a2db",
     tag: "Winner",
     date: "2024-10",

@@ -42,7 +42,7 @@ More on [Code4rena (@Chom)](https://code4rena.com/@Chom).
 
 - **2nd Place** at [LINE Hack 2025: Examer](https://web.facebook.com/share/p/18meUN1fcP/). AI-powered TCAS past-exam practice app on LINE Mini-App.
 - **4th Place, Mina Protokit** at [ETHGlobal Bangkok 2024: Proto Message Kit](https://ethglobal.com/showcase/proto-message-kit-74ms8). Framework for building smart agents on Mina with Protokit and XMTP.
-- **Winner** at [Based SEA: Coinbase Smart Passport](https://devfolio.co/projects/coinbase-smart-passport-a2db). Connect trusted identities to Coinbase Smart Wallet, pay yearly fee via Stripe.
+- **Winner** at [Based SEA: Coinbase Smart Passport](https://devfolio.co/projects/coinbase-smart-passport-a2db). Connect trusted identities to Coinbase Smart Wallet, pay with Smart Wallet or Stripe.
 - **2nd Place, Mina zkGaming** at [ETHOnline 2024: 2048 ZKNoid](https://ethglobal.com/showcase/2048-zknoid-f6sir). ZK-powered 2048 written in Protokit with the ZKNoid SDK.
 - **2nd Place** at [Aptos Event and ENS Gateway](https://app.akindo.io/communities/27DaQ3DEpUMXG011W/products/peAr4oG4DS0jx7pm). Onboarding gateway connecting ENS domains to Aptos.
 - **2nd Place** at [Move Hackathon by WebX: Sui Axelar USDC Bridge](https://app.akindo.io/communities/63Lx7jnO1uNngpzR/products/Drg7LozggTg6AGmp). Bridging USDC to Sui through Axelar.
