@@ -1,5 +1,6 @@
 export type Profile = {
   name: string;
+  fullName: string;
   headlinePrefix: string;
   product: { name: string; url: string };
   email: string;
@@ -53,6 +54,7 @@ export type Startup = Entry & {
 
 export const profile: Profile = {
   name: "Chomtana",
+  fullName: "Chomtana Chanjaraswichai",
   headlinePrefix: "Building",
   product: { name: "TopDev.to", url: "https://topdev.to" },
   email: "Chomtana001@gmail.com",
@@ -64,12 +66,12 @@ export const profile: Profile = {
 };
 
 export const seo = {
-  title: `${profile.name} - Resume & Portfolio`,
+  title: `${profile.fullName} - Resume & Portfolio`,
   description: `${profile.headlinePrefix} ${profile.product.name} - ${profile.tagline}`,
   url: "https://chom.dev",
   favicon: "/myself-small-circle.png",
   image: profile.avatar,
-  siteName: `${profile.name} - Resume & Portfolio`,
+  siteName: `${profile.fullName} - Resume & Portfolio`,
   twitterHandle: "@Chomtana",
   themeColor: "#0a0a0a",
   locale: "en_US",
