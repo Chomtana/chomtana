@@ -1,6 +1,6 @@
 # Hi, I'm Chomtana
 
-Building **[TopDev.to](https://topdev.to)**. Find hidden founders, grads and elites on GitHub.
+Building **[ScreenJournal](https://screenjournal.ai)**. See the work itself, not screenshots of it.
 
 Portfolio: **[chom.dev](https://chom.dev)**
 
@@ -8,7 +8,7 @@ Portfolio: **[chom.dev](https://chom.dev)**
 
 ## Founding journey
 
-- **[TopDev.to](https://topdev.to)** *(Active, since Mar 2026)*. Find hidden founders, grads and elites on GitHub.
+- **[ScreenJournal](https://screenjournal.ai)** *(Active, since Mar 2026)*. AI work visibility platform that turns screen activity into searchable timelines, timesheets and reports.
 - **[Turbo ZK Gaming](https://turbo.ing)** *(Sunset, Oct 2024)*. Real-time peer-to-peer ZK gaming framework.
   - *Achievements:* a16z CSX Spring 2025 video request, Alliance MVP2 Hackathon.
   - *Lesson:* validate demand before building. Game devs advertise "fully on-chain" but still run core gameplay on centralized servers.

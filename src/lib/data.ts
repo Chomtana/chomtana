@@ -56,10 +56,10 @@ export const profile: Profile = {
   name: "Chomtana",
   fullName: "Chomtana Chanjaraswichai",
   headlinePrefix: "Building",
-  product: { name: "TopDev.to", url: "https://topdev.to" },
+  product: { name: "ScreenJournal", url: "https://screenjournal.ai" },
   email: "Chomtana001@gmail.com",
   avatar: "/myself-small.jpeg",
-  tagline: "Find hidden founders, grads and elites on Github.",
+  tagline: "See the work itself, not screenshots of it.",
   github: "https://github.com/Chomtana",
   linkedin: "https://www.linkedin.com/in/chomtana",
   x: "https://x.com/Chomtana",
@@ -306,9 +306,10 @@ export const audits: Entry[] = [
 
 export const startups: Startup[] = [
   {
-    title: "TopDev.to",
-    description: "Find hidden founders, grads and elites on Github",
-    link: "https://topdev.to",
+    title: "ScreenJournal",
+    description:
+      "AI work visibility platform that turns screen activity into searchable timelines, timesheets and reports — see the work itself, not screenshots of it",
+    link: "https://screenjournal.ai",
     tag: "Active",
     date: "2026-03",
     winner: true,
