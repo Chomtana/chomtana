@@ -8,7 +8,8 @@
     | 'merge'
     | 'issue'
     | 'arrow'
-    | 'dot';
+    | 'dot'
+    | 'download';
   let { name, size = 20 }: { name: Name; size?: number } = $props();
 </script>
 
@@ -54,5 +55,11 @@
 {:else if name === 'dot'}
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
     <circle cx="12" cy="12" r="4"/>
+  </svg>
+{:else if name === 'download'}
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 3v12"/>
+    <path d="m7 10 5 5 5-5"/>
+    <path d="M4 21h16"/>
   </svg>
 {/if}

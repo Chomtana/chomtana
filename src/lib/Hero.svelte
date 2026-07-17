@@ -34,6 +34,9 @@
         <a class="icon-btn" href={profile.x} target="_blank" rel="noreferrer" aria-label="X">
           <Icon name="x" size={16} />
         </a>
+        <a class="icon-btn" href="#/cv" aria-label="Download CV">
+          <Icon name="download" size={18} />
+        </a>
       </div>
     </div>
 

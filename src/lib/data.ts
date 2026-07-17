@@ -52,6 +52,13 @@ export type Startup = Entry & {
   achievements?: string[];
 };
 
+export type WorkExperience = {
+  title: string;
+  company: string;
+  description: string;
+  date: string;
+};
+
 export const profile: Profile = {
   name: "Chomtana",
   fullName: "Chomtana Chanjaraswichai",
@@ -355,5 +362,29 @@ export const startups: Startup[] = [
       "Built at the NFT peak, right before the Luna collapse and the NFT market crash (and never recovered).",
     takeaways:
       "Avoid the peak hype. Get in early and build fast, and don't mistake airdrop hunters for real users.",
+  },
+];
+
+export const otherWorkExperience: WorkExperience[] = [
+  {
+    title: "PTTGC E-Permit System",
+    company: "PTT Global Chemical Public Company Limited (Outsource)",
+    description:
+      "Electronic permit-to-work system digitizing safety work permit requests, reviews and approvals for petrochemical plant operations.",
+    date: "2022-12",
+  },
+  {
+    title: "Fulfillment Inventory Management System",
+    company: "Siam Outlet Service Co., Ltd.",
+    description:
+      "Warehouse management system for an e-commerce fulfillment provider, covering receiving, stock tracking and pick-pack-ship order flows.",
+    date: "2021-12",
+  },
+  {
+    title: "Order Management System",
+    company: "Somsritshirt",
+    description:
+      "Order management system for a custom apparel factory, tracking bulk t-shirt orders from quotation through production to delivery.",
+    date: "2019-12",
   },
 ];

@@ -5,19 +5,32 @@
   import PRList from './lib/PRList.svelte';
   import EntryList from './lib/EntryList.svelte';
   import StartupList from './lib/StartupList.svelte';
+  import ExperienceList from './lib/ExperienceList.svelte';
   import ContactModal from './lib/ContactModal.svelte';
+  import CvPage from './lib/CvPage.svelte';
   import Icon from './lib/Icon.svelte';
-  import { contributions, hackathons, audits, startups, profile } from './lib/data';
+  import { contributions, hackathons, audits, startups, otherWorkExperience, profile } from './lib/data';
 
   let contactOpen = $state(false);
+  let hash = $state(window.location.hash);
 
   $effect(() => {
     const open = () => (contactOpen = true);
+    const onHash = () => (hash = window.location.hash);
     window.addEventListener('open-contact', open);
-    return () => window.removeEventListener('open-contact', open);
+    window.addEventListener('hashchange', onHash);
+    return () => {
+      window.removeEventListener('open-contact', open);
+      window.removeEventListener('hashchange', onHash);
+    };
   });
+
+  const isCv = $derived(hash.startsWith('#/cv'));
 </script>
 
+{#if isCv}
+<CvPage />
+{:else}
 <Nav />
 
 <main>
@@ -33,8 +46,17 @@
   </Section>
 
   <Section
-    id="contributions"
+    id="experience"
     index="02"
+    title="Other Work Experience"
+    subtitle="Before & alongside founding"
+  >
+    <ExperienceList items={otherWorkExperience} />
+  </Section>
+
+  <Section
+    id="contributions"
+    index="03"
     title="Open Source Contributions"
     subtitle="Pull requests & issues"
   >
@@ -43,7 +65,7 @@
 
   <Section
     id="audits"
-    index="03"
+    index="04"
     title="Code4rena Audits"
     subtitle="Public contest findings"
   >
@@ -61,7 +83,7 @@
 
   <Section
     id="hackathons"
-    index="04"
+    index="05"
     title="Hackathons"
     subtitle="Shipped under deadline"
   >
@@ -96,6 +118,7 @@
 </main>
 
 <ContactModal open={contactOpen} onClose={() => (contactOpen = false)} />
+{/if}
 
 <style>
   main {
